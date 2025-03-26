@@ -36,4 +36,9 @@ class LocationService:Service() {
             unregisterReceiver(mLocationReceiver)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unRegister()
+    }
 }
