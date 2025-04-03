@@ -214,7 +214,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
     private fun publishSave() {
         try {
             val d = JSONObject()
-                d.put("key","value")
+            d.put("key","value")
             val roamPublish1 = RoamPublish.Builder()
                 .metadata(d)
                 .appId()
