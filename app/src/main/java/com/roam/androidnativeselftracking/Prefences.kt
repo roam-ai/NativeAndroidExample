@@ -66,12 +66,21 @@ object Preferences {
         return getBoolean(context, Logger.MOCK)
     }
 
+    fun setPublish(context: Context, value: Boolean) {
+        setBoolean(context, Logger.PUBLISH, value)
+    }
+
+    fun getPublish(context: Context?): Boolean {
+        return getBoolean(context, Logger.PUBLISH)
+    }
+
 
     //example of a Logger object.
     object Logger {
         const val USER = "USER"
         const val SELF_LOGIN = "SELF_LOGIN"
         const val MOCK = "MOCK"
+        const val PUBLISH = "PUBLISH"
     }
 
 }

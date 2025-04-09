@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+   
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
 
     <EditText
         android:id="@+id/etUserId"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_centerInParent="true"
         android:layout_margin="10dp"
         android:background="@drawable/bg_edit_text"
         android:gravity="center"
@@ -31,6 +35,7 @@
         android:textAllCaps="false"
         android:textSize="16sp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
         />
 
     <Button
@@ -70,28 +75,55 @@
         />
 
     <LinearLayout
+        android:id="@+id/llPubSub"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_below="@+id/btStopTracking"
-        android:padding="16dp">
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Allow Mock Location"
+            android:text="Allow Publish and Save"
             android:textSize="18sp"
             android:textStyle="bold"
             android:paddingBottom="8dp"/>
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/switchMockLocation"
+            android:id="@+id/switchPublishSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
 
     </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llPubSub"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Allow Mock Location"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMockLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
 </RelativeLayout>
