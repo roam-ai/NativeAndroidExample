@@ -8,7 +8,8 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.roam.androidnativeselftracking"
+       // applicationId = "com.roam.androidnativeselftracking"
+        applicationId = "com.pawoints.curiouscat"
         minSdk = 21
         targetSdk = 35
         versionCode = 1
@@ -19,12 +20,26 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            isZipAlignEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+
+        debug {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            isZipAlignEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )}
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -42,8 +57,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    //implementation ("com.roam.sdk:roam-android:0.1.35-beta.4")
-    implementation ("com.roam.sdk:roam-android:0.1.35")
+
+    implementation ("com.roam.sdk:roam-android:0.1.37")
+    implementation ("com.roam.sdk:roam-batch-android:0.1.37")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
