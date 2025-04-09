@@ -67,6 +67,23 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
             Roam.allowMockLocation(isChecked)
             Preferences.setMockLocation(this,isChecked)
         }
+
+
+        if(Preferences.getPublish(this)) {
+            binding!!.switchPublishSave.isChecked = true
+        }
+        else {
+            binding!!.switchPublishSave.isChecked = false
+        }
+        binding!!.switchPublishSave.setOnCheckedChangeListener { _: CompoundButton, isChecked: Boolean ->
+           if(isChecked) {
+               publishSave()
+           }else{
+               stopPublishing()
+           }
+
+            Preferences.setPublish(this,isChecked)
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -200,7 +217,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
                 override fun onSuccess(message: String, userId: String) {
                     Log.e("TAG", "onSuccess: $userId $message")
                     //startTracking()
-                    publishSave()
+                    //publishSave()
                 }
 
                 override fun onError(error: RoamError) {
@@ -219,12 +236,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
                 .metadata(d)
                 .appId()
                 .userId()
-                .geofenceEvents()
-                .locationEvents()
-                .nearbyEvents()
-                .tripsEvents()
-                .locationListener()
-                .eventListener()
+                //.geofenceEvents()
+                //.locationEvents()
+               //.nearbyEvents()
+                //.tripsEvents()
+                //.locationListener()
+                //.eventListener()
                 .altitude()
                 .course()
                 .speed()
@@ -255,7 +272,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
                 .buildType()
                 .buildVersionIncremental()
                 .kernelVersion()
-                .installedApplication()
+                //.installedApplication()
                 .aaid()
                 .ipAddress()
                 .deviceName()
@@ -275,15 +292,30 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
             Roam.publishAndSave(roamPublish1, object : PublishCallback {
                 override fun onSuccess(message: String) {
                     Log.e("TAG", "onSuccess: $message")
+                    showToast("onSuccess: $message")
                 }
 
                 override fun onError(error: RoamError) {
                     Log.e("TAG", "onFailure: " + Gson().toJson(error))
+                    showToast("onError: ${error.message}")
                 }
             })
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    private fun stopPublishing(){
+        Roam.stopPublishing(object :  PublishCallback {
+            override fun onSuccess(p0: String?) {
+                showToast("onSuccess: $p0")
+            }
+
+            override fun onError(p0: RoamError?) {
+                showToast("onError: ${p0?.message}")
+            }
+
+        })
     }
 
     private fun startTracking() {
@@ -349,7 +381,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
         }
 
 
-        val roamBatchPublish = RoamBatchPublish.Builder()
+            val roamBatchPublish = RoamBatchPublish.Builder()
             .appId()
             .userId()
             .geofenceEvents()
