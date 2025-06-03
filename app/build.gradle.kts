@@ -8,8 +8,8 @@ android {
     compileSdk = 35
 
     defaultConfig {
-       // applicationId = "com.roam.androidnativeselftracking"
-        applicationId = "com.pawoints.curiouscat"
+        applicationId = "com.roam.androidnativeselftracking"
+//        applicationId = "com.pawoints.curiouscat"
         minSdk = 21
         targetSdk = 35
         versionCode = 1
@@ -58,8 +58,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    implementation ("com.roam.sdk:roam-android:0.1.37")
-    implementation ("com.roam.sdk:roam-batch-android:0.1.37")
+//    implementation ("com.roam.sdk:roam-android:0.1.40")
+//    implementation ("com.roam.sdk:roam-batch-android:0.1.40")
+
+    implementation("com.roam.sdk:roam-android:0.1.41")
+    implementation("com.roam.sdk:roam-batch-android:0.1.41")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
