@@ -13,8 +13,6 @@ import androidx.core.content.ContextCompat
 
 class SplashActivity : AppCompatActivity() {
 
-    private val LOCATION_PERMISSION_REQUEST_CODE = 1001
-
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
             val fineLocationGranted = permissions[android.Manifest.permission.ACCESS_FINE_LOCATION] ?: false

@@ -3,7 +3,6 @@ package com.roam.androidnativeselftracking
 import android.app.Application
 import com.roam.roam_batch_connector.RoamBatch
 import com.roam.sdk.Roam
-import com.roam.sdk.callback.RoamLogoutCallback
 import com.roam.sdk.enums.LogLevel
 
 
