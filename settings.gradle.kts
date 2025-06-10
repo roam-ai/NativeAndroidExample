@@ -17,6 +17,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven ( url = "https://com-roam-android.s3.amazonaws.com/")
+        flatDir {
+            dirs("libs")
+        }
     }
 }
 
