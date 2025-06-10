@@ -10,7 +10,7 @@ class Application: Application() {
     override fun onCreate() {
         super.onCreate()
         //Add Your project publish key
-        Roam.initialize(this, "Project_Key")
+        Roam.initialize(this, "")
         //Roam batch processing
         RoamBatch.initialize(this)
         Roam.setLogLevel(LogLevel.VERBOSE)

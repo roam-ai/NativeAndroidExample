@@ -20,6 +20,14 @@ class MainActivity : AppCompatActivity(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view: View = binding!!.root
         setContentView(view)
+        Roam.setForegroundNotification(
+            true,
+            "Self tracking app",
+            "Click here to redirect the app",
+            R.drawable.ic_launcher_foreground,
+            "com.roam.androidnativeselftracking.MainActivity",
+            "com.roam.androidnativeselftracking.LocationService"
+        )
         Roam.allowMockLocation(true)
         if (Roam.isLocationTracking())
             {
