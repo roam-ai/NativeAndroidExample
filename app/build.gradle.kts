@@ -9,7 +9,6 @@ android {
 
     defaultConfig {
         applicationId = "com.roam.androidnativeselftracking"
-//        applicationId = "com.pawoints.curiouscat"
         minSdk = 21
         targetSdk = 35
         versionCode = 1
