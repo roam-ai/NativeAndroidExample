@@ -37,13 +37,10 @@ class MainActivity : AppCompatActivity(){
             showToast("NOT TRACKING...")
             Roam.startTracking(RoamTrackingMode.BALANCED, object: TrackingCallback {
                 override fun onSuccess(p0: String?) {
-                    Log.e("TAG", "onSuccess: "+p0)
-
                     showToast("TRACKING STARTED...")
                 }
 
                 override fun onError(p0: RoamError?) {
-                    Log.e("TAG", "onFailure: "+ (p0?.message))
                     showToast( "TRACKING NOT STARTED... \n"+p0?.message)
                 }
             })
@@ -57,13 +54,11 @@ class MainActivity : AppCompatActivity(){
             Roam.stopTracking(object : TrackingCallback {
                 override fun onSuccess(message: String?) {
                     // Tracking stopped successfully
-                    Log.d("RoamTracking", "Tracking stopped: $message")
                     showToast("TRACKING STOPPED...")
                 }
 
                 override fun onError(error: RoamError?) {
                     // Handle stopping error
-                    Log.e("RoamTracking", "Error stopping tracking: ${error?.message}")
                     showToast("TRACKING NOT STOPPED...\n"+error?.message)
                 }
             })

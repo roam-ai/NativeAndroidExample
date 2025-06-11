@@ -58,14 +58,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-//    implementation ("com.roam.sdk:roam-android:0.1.40")
-//    implementation ("com.roam.sdk:roam-batch-android:0.1.40")
-
 //    implementation("com.roam.sdk:roam-android:0.1.41")
 //    implementation("com.roam.sdk:roam-batch-android:0.1.41")
 
-    implementation(files("libs/roam_0.1.41_v1.aar"))
-    implementation(files("libs/roam-batch_0.1.41_v1.aar"))
+    implementation(files("libs/roam_0.1.41_v2.aar"))
+    implementation(files("libs/roam-batch_0.1.41_v2.aar"))
 
     implementation ("com.auth0.android:jwtdecode:2.0.1")
     implementation ("com.google.android.gms:play-services-location:21.3.0")
