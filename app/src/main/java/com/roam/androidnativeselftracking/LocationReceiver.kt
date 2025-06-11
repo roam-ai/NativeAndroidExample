@@ -32,8 +32,8 @@ class LocationReceiver: RoamReceiver() {
                 roamLocation.location.verticalAccuracyMeters
             }
         }
-        Log.e("TAG", "onLocationUpdated: "+roamLocations[0].location.latitude.toString()
-                +" "+roamLocations[0].location.longitude )
+//        Log.e("TAG", "onLocationUpdated: "+roamLocations[0].location.latitude.toString()
+//                +" "+roamLocations[0].location.longitude )
         Toast.makeText(context, roamLocations[0].location.latitude.toString()
                 +" "+roamLocations[0].location.longitude, Toast.LENGTH_SHORT).show()
     }
