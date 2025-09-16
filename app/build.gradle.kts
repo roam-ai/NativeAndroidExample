@@ -58,22 +58,8 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-//    implementation ("com.roam.sdk:roam-android:0.1.40")
-//    implementation ("com.roam.sdk:roam-batch-android:0.1.40")
-
-//    implementation("com.roam.sdk:roam-android:0.1.41")
-//    implementation("com.roam.sdk:roam-batch-android:0.1.41")
-
-    implementation(files("libs/roam_0.1.41_v1.aar"))
-    implementation(files("libs/roam-batch_0.1.41_v1.aar"))
-
-    implementation ("com.auth0.android:jwtdecode:2.0.1")
-    implementation ("com.google.android.gms:play-services-location:21.3.0")
-    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
-    implementation ("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.4")
-    implementation ("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
-    implementation ("com.google.android.gms:play-services-ads-identifier:18.2.0")
+    implementation("com.roam.sdk:roam-android:0.1.42")
+    implementation("com.roam.sdk:roam-batch-android:0.1.42")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
